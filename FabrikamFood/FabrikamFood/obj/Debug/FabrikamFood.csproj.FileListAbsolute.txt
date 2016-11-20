@@ -1,0 +1,17 @@
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\FabrikamFood.dll
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\FabrikamFood.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Platform.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.csprojResolveAssemblyReference.cache
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.MainPage.xaml.g.cs
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.App.xaml.g.cs
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll.mdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\FabrikamFood.dll.mdb
