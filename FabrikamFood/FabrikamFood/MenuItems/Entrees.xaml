@@ -3,4 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FabrikamFood.MenuItems.Entrees">
   <Label Text="Entrees" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+    <ListView x:Name ="EntreeList"  HasUnevenRows="True" Grid.Row="0" SeparatorVisibility="None"/>
+  </StackLayout>
 </ContentPage>

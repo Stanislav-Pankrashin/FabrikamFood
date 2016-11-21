@@ -17,8 +17,16 @@ namespace FabrikamFood.MenuItems {
     public partial class Entrees : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ActivityIndicator UploadingIndicator;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView EntreeList;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(Entrees));
+            UploadingIndicator = this.FindByName<global::Xamarin.Forms.ActivityIndicator>("UploadingIndicator");
+            EntreeList = this.FindByName<global::Xamarin.Forms.ListView>("EntreeList");
         }
     }
 }
