@@ -10,6 +10,8 @@ using Xamarin.Forms;
 
 namespace FabrikamFood.MenuItems {
     public partial class Entrees : ContentPage {
+        List<Menu> menuItems;
+
         //Initialize component then get entree items
         public Entrees() {
             InitializeComponent();
@@ -18,25 +20,41 @@ namespace FabrikamFood.MenuItems {
         //Populate the view with the entrees
         public async void getEntreeItems() {
             UploadingIndicator.IsRunning = true;
-            List<Menu> menuItems = await AzureManager.AzureManagerInstance.getEntree();
+            menuItems = await AzureManager.AzureManagerInstance.getEntree();
 
-            //EntreeList.ItemsSource = menuItems;
-            //UploadingIndicator.IsRunning = false;
+            EntreeList.ItemsSource = menuItems;
+            UploadingIndicator.IsRunning = false;
+
+        }
+
+        public async void itemClicked(object sender, EventArgs e) {
+            Button btn = (Button)sender;
+            string itemName = btn.Text;
+            string itemDescription;
+            double itemprice;
+            Menu item;
+
             try {
                 int counter = 0;
                 while (true) {
-                    var item = menuItems[counter];
-                    Button btn = new Button();
-                    btn.Text = item.DishName + item.DishPrice;
-
+                    if (menuItems[counter].DishName == itemName) {
+                        item = menuItems[counter];
+                        break;
+                    }
+                    counter++;
 
                 }
-                   
 
-            }catch {
+                itemDescription = item.DishDescription;
+                itemprice = item.DishPrice;
+                await DisplayAlert(itemName, itemDescription + "\n\n" + "$" + itemprice, "purchase", "no thanks");
 
-
+            } catch {
+                await DisplayAlert("Oh no!", "item not found", "ok");
             }
+            
+
+            
 
         }
     }

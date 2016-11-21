@@ -2,9 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FabrikamFood.MenuItems.Entrees">
-  <Label Text="Entrees" VerticalOptions="Center" HorizontalOptions="Center" />
   <StackLayout>
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
-    <ListView x:Name ="EntreeList"  HasUnevenRows="True" Grid.Row="0" SeparatorVisibility="None"/>
+    <ListView x:Name="EntreeList" HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+              </Grid.ColumnDefinitions>
+              <Button Grid.Column="0" Text="{Binding DishName}" Clicked="itemClicked"/>
+
+
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
 </ContentPage>
