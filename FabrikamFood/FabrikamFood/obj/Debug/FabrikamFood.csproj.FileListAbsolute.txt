@@ -13,5 +13,9 @@ C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\Fabrika
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.App.xaml.g.cs
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.pdb
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.MenuPage.xaml.g.cs
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.MenuItems.Entrees.xaml.g.cs
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.MenuItems.Mains.xaml.g.cs
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.MenuItems.Vegetarian.xaml.g.cs
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll.mdb
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\FabrikamFood.dll.mdb

@@ -12,6 +12,11 @@ namespace FabrikamFood {
         }
         public async void showAlert(object sender, EventArgs e) {
             await DisplayAlert("Yay!", "Button Press Registered", "ok");
+
+        }
+
+        public async void showMenu(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new MenuPage());
         }
     }
 }
