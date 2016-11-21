@@ -17,8 +17,16 @@ namespace FabrikamFood.MenuItems {
     public partial class Vegetarian : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ActivityIndicator UploadingIndicator;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView VegetarianList;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(Vegetarian));
+            UploadingIndicator = this.FindByName<global::Xamarin.Forms.ActivityIndicator>("UploadingIndicator");
+            VegetarianList = this.FindByName<global::Xamarin.Forms.ListView>("VegetarianList");
         }
     }
 }

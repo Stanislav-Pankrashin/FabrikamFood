@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FabrikamFood.MenuItems.Vegetarian">
+             x:Class="FabrikamFood.Views.CartPage">
   <StackLayout>
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
-    <ListView x:Name="VegetarianList" HasUnevenRows="True">
+    <Label Text ="cart"/>
+    <ListView x:Name="CartList" HasUnevenRows="True">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -14,9 +15,11 @@
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
 
               </Grid.ColumnDefinitions>
-              <Button Grid.Column="0" Text="{Binding DishName}" Clicked="itemClicked"/>
+              <Label Grid.Column="0" Text="{Binding Item1}"/>
+              <Label Grid.Column="1" Text="{Binding Item2}"/>
 
 
             </Grid>
@@ -24,5 +27,16 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Button Text ="Clear Cart" Grid.Row="0" Grid.Column="0" Clicked = "clearCart"/>
+      <Button Text ="Check Out" Grid.Row="0" Grid.Column="1" Clicked = "checkOut"/>
+    </Grid>
   </StackLayout>
 </ContentPage>

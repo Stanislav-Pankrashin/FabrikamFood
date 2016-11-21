@@ -29,5 +29,6 @@ C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\Fabrika
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.pdb
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.csprojResolveAssemblyReference.cache
+C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.Views.CartPage.xaml.g.cs
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\obj\Debug\FabrikamFood.dll.mdb
 C:\Users\stase\OneDrive\Documents\GitHub\MSAP2\FabrikamFood\FabrikamFood\FabrikamFood\bin\Debug\FabrikamFood.dll.mdb

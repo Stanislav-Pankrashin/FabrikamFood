@@ -25,14 +25,14 @@ namespace FabrikamFood {
                 return manager;
             }
         }
-        //Remove all of the non entree items from the menu, and return the smaller menu
-        public async Task<List<Menu>> getEntree() {
+        //Remove all of the non type items from the menu, and return the smaller menu
+        public async Task<List<Menu>> getSpecific(string type) {
             List<Menu> menuItems = await this.menuTable.ToListAsync();
 
             try {
                 int counter = 0;
                 while (true) {
-                    if (menuItems[counter].DishType != "Entree") {
+                    if (menuItems[counter].DishType != type) {
                         menuItems.RemoveAt(counter);
                     } else {
                         counter++;
