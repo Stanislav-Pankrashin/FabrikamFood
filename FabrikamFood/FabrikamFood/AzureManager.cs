@@ -11,6 +11,7 @@ namespace FabrikamFood {
         public static AzureManager manager;
         private MobileServiceClient client;
         private IMobileServiceTable<Menu> menuTable;
+        private IMobileServiceTable<Orders> ordersTable;
         //Get a service client and the table
         private AzureManager() {
             this.client = new MobileServiceClient("http://fabrikamfoods.azurewebsites.net");
@@ -24,6 +25,13 @@ namespace FabrikamFood {
                 }
                 return manager;
             }
+        }
+
+        public async Task UpdateOrders(Orders order) {
+            if(ordersTable == null) {
+                this.ordersTable = this.client.GetTable<Orders>();
+            }
+            await this.ordersTable.InsertAsync(order);
         }
         //Remove all of the non type items from the menu, and return the smaller menu
         public async Task<List<Menu>> getSpecific(string type) {

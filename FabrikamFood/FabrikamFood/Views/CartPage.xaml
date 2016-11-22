@@ -4,7 +4,22 @@
              x:Class="FabrikamFood.Views.CartPage">
   <StackLayout>
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
-    <Label Text ="cart"/>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+
+      </Grid.ColumnDefinitions>
+      <Label Text ="Item" Grid.Column ="0"/>
+      <Label Text ="Total Price" Grid.Column ="1"/>
+      <Label Text ="Quantity" Grid.Column ="2"/>
+
+    </Grid>
+
     <ListView x:Name="CartList" HasUnevenRows="True">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -16,10 +31,12 @@
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
 
               </Grid.ColumnDefinitions>
-              <Label Grid.Column="0" Text="{Binding Item1}"/>
-              <Label Grid.Column="1" Text="{Binding Item2}"/>
+              <Label Grid.Column="0" Text="{Binding Path=Key}"/>
+              <Label Grid.Column="1" Text="{Binding Path=Value.Item1}"/>
+              <Label Grid.Column="2" Text="{Binding Path=Value.Item2}"/>
 
 
             </Grid>
@@ -27,6 +44,19 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <Entry x:Name="userName"
+             Placeholder="Name"
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="End" />
+    <Entry x:Name="userAddress"
+            Placeholder="Address"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End" />
+    <Entry x:Name="userNumber"
+            Placeholder="Phone Number"
+            Keyboard="Telephone"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="End" />
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition Height="*" />
@@ -35,6 +65,7 @@
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
+
       <Button Text ="Clear Cart" Grid.Row="0" Grid.Column="0" Clicked = "clearCart"/>
       <Button Text ="Check Out" Grid.Row="0" Grid.Column="1" Clicked = "checkOut"/>
     </Grid>

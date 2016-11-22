@@ -19,7 +19,8 @@
     <Button Text="View Order" Grid.Row="1" Grid.Column="1" Clicked ="showCart"/>
     <Button Text="Favorites and Past Orders" Grid.Row="2" Grid.Column="0"/>
     <Button Text="Not Sure What To Get?" Grid.Row="2" Grid.Column="1" />
-    <Button Text="FaceBook Login" Grid.ColumnSpan ="2" Grid.Row="3" Grid.Column ="0"/>
+    <Button Text="How To Reach Us" Grid.Row="3" Grid.Column="0" />
+    <Button Text="FaceBook Login" Grid.Row="3" Grid.Column ="1"/>
   </Grid>
 
 </ContentPage>
