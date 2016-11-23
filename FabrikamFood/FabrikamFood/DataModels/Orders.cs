@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FabrikamFood.DataModels {
-    class Orders {
+    public class Orders {
         public string id { get; set; }
         public string createdAt { get; set; }
         public string updatedAt { get; set; }

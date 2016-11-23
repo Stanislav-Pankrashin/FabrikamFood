@@ -5,6 +5,7 @@
              x:Class="FabrikamFood.MainPage">
   <Grid>
     <Grid.RowDefinitions>
+      <RowDefinition Height="0.5*" />
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
@@ -14,13 +15,15 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <Label Text="Fabrikam Foods" Grid.ColumnSpan ="2" Grid.Row="0" Grid.Column ="0"/>
-    <Button Text="Menu" Grid.Row="1" Grid.Column="0" Clicked="showMenu"/>
-    <Button Text="View Order" Grid.Row="1" Grid.Column="1" Clicked ="showCart"/>
-    <Button Text="Favorites and Past Orders" Grid.Row="2" Grid.Column="0"/>
-    <Button Text="Not Sure What To Get?" Grid.Row="2" Grid.Column="1" />
-    <Button Text="How To Reach Us" Grid.Row="3" Grid.Column="0" />
-    <Button Text="FaceBook Login" Grid.Row="3" Grid.Column ="1"/>
+    <Button Text="About" Grid.Row="0" Grid.Column="0" Clicked="showMenu" StyleClass="Warning" />
+    <Button Text="How To" Grid.Row="0" Grid.Column="1" Clicked="showMenu" StyleClass="Warning" />
+    <Label Text="Fabrikam Foods" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header"/>
+    <Button Text="Menu" Grid.Row="2" Grid.Column="0" Clicked="showMenu" StyleClass="Info" />
+    <Button Text="View Order" Grid.Row="2" Grid.Column="1" Clicked ="showCart" StyleClass="Info" />
+    <Button Text="Favorites and Past Orders" Grid.Row="3" Grid.Column="0" StyleClass="Info" />
+    <Button Text="Not Sure What To Get?" Grid.Row="3" Grid.Column="1" Clicked="showPhoto" StyleClass="Info" />
+    <Button Text="How To Reach Us" Grid.Row="4" Grid.Column="0" Clicked ="showMap" StyleClass="Info" />
+    <Button Text="FaceBook Login" Grid.Row="4" Grid.Column ="1" Clicked="loginButton_Clicked" StyleClass="Info" />
   </Grid>
 
 </ContentPage>

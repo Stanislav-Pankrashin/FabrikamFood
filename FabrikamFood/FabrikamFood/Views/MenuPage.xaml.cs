@@ -24,7 +24,10 @@ namespace FabrikamFood {
         public async void vegetarianClicked(object sender, EventArgs e) {
             await Navigation.PushModalAsync(new Vegetarian());
         }
+        public async void BackClicked(object sender, EventArgs e) {
+            await Navigation.PopModalAsync();
 
+        }
 
     }
 }

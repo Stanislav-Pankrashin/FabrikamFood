@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FabrikamFood.Views.CartPage">
   <StackLayout>
-    <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+    <!--<ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />-->
     <Grid>
       <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*" />
         <RowDefinition Height="*" />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
@@ -14,9 +15,11 @@
         <ColumnDefinition Width="*" />
 
       </Grid.ColumnDefinitions>
-      <Label Text ="Item" Grid.Column ="0"/>
-      <Label Text ="Total Price" Grid.Column ="1"/>
-      <Label Text ="Quantity" Grid.Column ="2"/>
+      <Button Text ="Back" Grid.ColumnSpan ="2" Grid.Column ="0" Grid.Row ="0" Clicked ="BackClicked"/>
+      <Button Text ="How To"  Grid.Column ="2" Grid.Row ="0"/>
+      <Label Text ="Item" Grid.Column ="0" Grid.Row ="1"/>
+      <Label Text ="Total Price" Grid.Column ="1" Grid.Row ="1"/>
+      <Label Text ="Quantity" Grid.Column ="2" Grid.Row ="1"/>
 
     </Grid>
 

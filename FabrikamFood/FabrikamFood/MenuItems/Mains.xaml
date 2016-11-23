@@ -3,6 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FabrikamFood.MenuItems.Mains">
   <StackLayout>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+
+      </Grid.ColumnDefinitions>
+      <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" />
+      <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" />
+
+    </Grid>
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
     <ListView x:Name="MainList" HasUnevenRows="True">
       <ListView.ItemTemplate>

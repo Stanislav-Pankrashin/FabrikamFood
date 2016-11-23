@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <uses-sdk android:minSdkVersion="15" />
-  <application android:label="FabrikamFood.Droid" android:theme="@android:style/Theme.Material.Light"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.msa.FabrikamFood">
+	<uses-sdk android:minSdkVersion="15" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<application android:label="FabrikamFood.Droid" android:theme="@android:style/Theme.Material.Light">
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAHiXG4FrC0WQj9KHivrTNpUodgGPcLDdc" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+	</application>
 </manifest>

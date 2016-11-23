@@ -58,12 +58,12 @@ namespace FabrikamFood.Views {
                 items = new List<string>(dict.Keys);
                 //Check to see if any items have multiples, if there are, add copies of that to the list
                 int count = items.Count;
-                for(int i = 0; i < count; i++) {
+                for (int i = 0; i < count; i++) {
                     //If more than one exists
-                    if(dict[items[i]].Item2 > 1) {
+                    if (dict[items[i]].Item2 > 1) {
                         //add that many
                         int numToAdd = (int)dict[items[i]].Item2 - 1;
-                        for(int j = numToAdd; j > 0; j--) {
+                        for (int j = numToAdd; j > 0; j--) {
                             items.Add(items[i]);
                         }
                     }
@@ -73,7 +73,7 @@ namespace FabrikamFood.Views {
 
                 //delimit all of the elements with a ',' so it can later be seperated
                 count = items.Count;
-                for(int i = 0; i < count - 1; i++) {
+                for (int i = 0; i < count - 1; i++) {
                     items[i] += ",";
 
                 }
@@ -88,6 +88,11 @@ namespace FabrikamFood.Views {
                 order.PhoneNumber = number;
                 //then upload it to the table
                 await AzureManager.AzureManagerInstance.UpdateOrders(order);
+                if (Cart.loggedIn) {
+                    //await AzureManager.AzureManagerInstance.UpdatePersonalInfo(order);
+                }
+
+
                 await DisplayAlert("Yay!", "Order sent, you will be contacted when order is ready", "ok");
                 Cart.CartInstance.clearCart();
                 CartList.ItemsSource = Cart.CartInstance.items;
@@ -99,6 +104,12 @@ namespace FabrikamFood.Views {
             }
 
 
+
+
+        }
+        public async void BackClicked(object sender, EventArgs e) {
+            await Navigation.PopModalAsync();
+            
         }
     }
 }

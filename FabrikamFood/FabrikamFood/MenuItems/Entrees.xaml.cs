@@ -58,9 +58,12 @@ namespace FabrikamFood.MenuItems {
             }
             
 
-            
+        }
+        public async void BackClicked(object sender, EventArgs e) {
+            await Navigation.PopModalAsync();
 
         }
+
     }
 }
 

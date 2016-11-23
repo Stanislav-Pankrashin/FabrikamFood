@@ -1,18 +1,27 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace FabrikamFood.UserData {
 
 
-    class Cart {
+    public class Cart {
         private static Cart userCart;
         public static bool loggedIn { get; set; }
         //public List<Tuple<string, double>> items { get; private set; }
         public Dictionary<string, Tuple<double, double>> items { get; private set; }
         public double totalPrice { get; private set; }
+        public static int numberItems { get; set; }
+        public static MobileServiceUser userObject { get; set; }
+        public static string userToken;
+        public static string userId;
         public string userName;
         public string address;
 
@@ -48,24 +57,39 @@ namespace FabrikamFood.UserData {
 
         }
 
-        /* public void deleteItem(string item) {
-             try {
-                 int counter = 0;
-                 while (true) {
-                     if (items[0].Item1 == item) {
-                         items.RemoveAt(counter);
-
-                     }
-                     counter++;
-                 }
-
-             } catch { }
-         }*/
-
         public void clearCart() {
             this.items = new Dictionary<string, Tuple<double, double>>();
 
         }
+        /*
+        public static async void getUserInfo() {
+            userToken = AzureManager.AzureManagerInstance.client.CurrentUser.MobileServiceAuthenticationToken;
+            string authToken = "Bearer" + " " + userToken;
+            var webRequest = System.Net.WebRequest.Create("https://graph.facebook.com/v2.8/me?fields=id,name");
+            webRequest.Method = "GET";
+            webRequest.ContentType = "application/json";
+            webRequest.Headers["Authorization"] = authToken;
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer " + authToken);
+            var x = await client.GetStringAsync("https://graph.facebook.com/v2.8/me?fields=id,name");
+            Cart.userToken = x;
+
+
+
+
+
+
+            
+             userToken = AzureManager.AzureManagerInstance.client.CurrentUser.MobileServiceAuthenticationToken;
+             HttpWebRequest client = (HttpWebRequest)WebRequest.Create("https://graph.facebook.com/v2.8/me?fields=id,name");
+             string authToken = "Bearer" + " " + userToken;
+
+             client.Headers["Authorization"] = authToken;
+             WebResponse x = client.BeginGetRequestStream();
+             
+
+
+        }*/
 
 
 

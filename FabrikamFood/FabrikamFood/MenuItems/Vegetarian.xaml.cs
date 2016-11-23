@@ -56,8 +56,9 @@ namespace FabrikamFood.MenuItems {
                 await DisplayAlert("Oh no!", "item not found", "ok");
             }
 
-
-
+        }
+        public async void BackClicked(object sender, EventArgs e) {
+            await Navigation.PopModalAsync();
 
         }
     }

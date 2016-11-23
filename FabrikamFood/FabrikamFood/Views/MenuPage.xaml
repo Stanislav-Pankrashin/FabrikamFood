@@ -4,6 +4,7 @@
              x:Class="FabrikamFood.MenuPage">
   <Grid>
     <Grid.RowDefinitions>
+      <RowDefinition Height="0.25*" />
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
       <RowDefinition Height="*" />
@@ -13,10 +14,12 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <Label Text="Menu" Grid.ColumnSpan ="2" Grid.Row="0" Grid.Column ="0"/>
-    <Button Text="Entrees" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" Clicked="entreesClicked"/>
-    <Button Text="Mains" Grid.ColumnSpan ="2" Grid.Row="2" Grid.Column ="0" Clicked="mainsClicked"/>
-    <Button Text="Vegetarian" Grid.ColumnSpan ="2" Grid.Row="3" Grid.Column ="0" Clicked="vegetarianClicked"/>
+    <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" Grid.Row="0"/>
+    <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" Grid.Row="0"/>
+    <Label Text="Menu" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header"/>
+    <Button Text="Entrees" Grid.ColumnSpan ="2" Grid.Row="2" Grid.Column ="0" Clicked="entreesClicked" StyleClass="Large"/>
+    <Button Text="Mains" Grid.ColumnSpan ="2" Grid.Row="3" Grid.Column ="0" Clicked="mainsClicked" StyleClass="Large"/>
+    <Button Text="Vegetarian" Grid.ColumnSpan ="2" Grid.Row="4" Grid.Column ="0" Clicked="vegetarianClicked" StyleClass="Large"/>
 
   </Grid>
 </ContentPage>

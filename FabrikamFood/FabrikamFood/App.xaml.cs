@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FabrikamFood {
+
+    public interface IAuthenticate {
+        Task<bool> Authenticate();
+    }
+
     public partial class App : Application {
+
+        public static IAuthenticate Authenticator { get; private set; }
+
+        public static void Init(IAuthenticate authenticator) {
+            Authenticator = authenticator;
+        }
 
         public App() {
             InitializeComponent();
