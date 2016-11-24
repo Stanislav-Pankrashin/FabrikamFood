@@ -6,6 +6,7 @@
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition Height="0.25*" />
+        <RowDefinition Height="*" />
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
@@ -14,9 +15,10 @@
       </Grid.ColumnDefinitions>
       <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" />
       <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" x:Name="cartButton" Clicked = "CartClicked"/>
+      <Label Text="Vegetarian" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" BackgroundColor ="#4286f4"/>
 
     </Grid>
-    <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+    <ActivityIndicator x:Name="UploadingIndicator" Color="Blue" IsRunning="false" Grid.Row="0" />
     <ListView x:Name="VegetarianList" HasUnevenRows="True">
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -29,7 +31,7 @@
                 <ColumnDefinition Width="*" />
 
               </Grid.ColumnDefinitions>
-              <Button Grid.Column="0" Text="{Binding DishName}" Clicked="itemClicked"/>
+              <Button Grid.Column="0" Text="{Binding DishName}" Clicked="itemClicked" StyleClass = "Warning"/>
 
 
             </Grid>

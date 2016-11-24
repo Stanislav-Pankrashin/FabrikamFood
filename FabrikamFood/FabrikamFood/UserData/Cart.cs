@@ -17,7 +17,7 @@ namespace FabrikamFood.UserData {
         public static bool loggedIn { get; set; }
         //public List<Tuple<string, double>> items { get; private set; }
         public Dictionary<string, Tuple<double, double>> items { get; private set; }
-        public double totalPrice { get; private set; }
+        public static double totalPrice { get; private set; }
         public static int numberItems { get; set; }
         public static MobileServiceUser userObject { get; set; }
         public static string userToken;
@@ -62,6 +62,8 @@ namespace FabrikamFood.UserData {
 
         public void clearCart() {
             this.items = new Dictionary<string, Tuple<double, double>>();
+            Cart.totalPrice = 0;
+            Cart.numberItems = 0;
 
         }
         /*

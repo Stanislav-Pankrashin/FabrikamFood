@@ -135,5 +135,16 @@ namespace FabrikamFood.Views {
 
 
         }
+        public async void HelpClicked(object sender, EventArgs e) {
+            await DisplayAlert("Help", "Simply take a photo, and we'll recommend a dish for you!", "Ok");
+
+        }
+        public async void BackClicked(object sender, EventArgs e) {
+            await Navigation.PopModalAsync();
+
+        }
+        public async void CartClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new CartPage());
+        }
     }
 }

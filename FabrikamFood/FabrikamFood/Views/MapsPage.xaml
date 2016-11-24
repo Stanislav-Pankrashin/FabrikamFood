@@ -11,10 +11,12 @@
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
 
       </Grid.ColumnDefinitions>
       <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" />
       <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" x:Name="cartButton" Clicked = "CartClicked"/>
+      <Button Text ="Where To Find Us"  Grid.Column ="2" StyleClass="Warning" Clicked = "whereToFind"/>
 
     </Grid>
     <maps:Map WidthRequest="340" HeightRequest="400"
@@ -22,7 +24,7 @@
         IsShowingUser="true"
         MapType="Street"
         />
-    <Label Text ="" x:Name ="outputField"/>
+    <Label Text ="" x:Name ="outputField" StyleClass ="Header" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" BackgroundColor ="#4286f4"/>
   </StackLayout>
   
 </ContentPage>

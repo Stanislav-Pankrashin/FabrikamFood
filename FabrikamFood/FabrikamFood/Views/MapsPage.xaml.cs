@@ -34,7 +34,7 @@ namespace FabrikamFood.Views {
                 Type = PinType.Place,
                 Position = position,
                 Label = "Fabrikam Food",
-                Address = "Elliot St"
+                Address = "22 Elliot St"
             };
             MyMap.Pins.Add(pin);
 
@@ -45,7 +45,7 @@ namespace FabrikamFood.Views {
                     Type = PinType.Place,
                     Position = userPosition,
                     Label = "Your location",
-                    Address = "Elliot St"
+                    Address = ""
                 };
                 MyMap.Pins.Add(userLoc);
                 this.googleRequest();
@@ -68,6 +68,7 @@ namespace FabrikamFood.Views {
 
             } catch {
                 await DisplayAlert("Oops", "It looks like you don't have gps enabled", "ok");
+                outputField.Text = string.Format("No Gps Available :(");
             }
         }
 
@@ -79,7 +80,7 @@ namespace FabrikamFood.Views {
             rootObject = JsonConvert.DeserializeObject<GoogleResponse.RootObject>(x);
             string thekmDistance = rootObject.rows[0].elements[0].distance.text;
             string thetimeTaken = rootObject.rows[0].elements[0].duration.text;
-            outputField.Text = string.Format("driving distance: {0}, time: {1}", thekmDistance, thetimeTaken);
+            outputField.Text = string.Format("We estimate the distance to reach us as: {0}, with a time of: {1} by car. ", thekmDistance, thetimeTaken);
 
 
         }
@@ -90,6 +91,9 @@ namespace FabrikamFood.Views {
         }
         public async void CartClicked(object sender, EventArgs e) {
             await Navigation.PushModalAsync(new CartPage());
+        }
+        public async void whereToFind(object sender, EventArgs e) {
+            await DisplayAlert("Where We are", "You can find us at 22 Elliot St, Auckland. We are open 9-5 every day. Please call 1234567 for reservations", "Ok");
         }
     }
 }

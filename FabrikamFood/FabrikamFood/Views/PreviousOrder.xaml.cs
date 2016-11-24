@@ -31,6 +31,8 @@ namespace FabrikamFood.Views {
 
         }
         public async void addToOrder(object sender, EventArgs e) {
+            await DisplayAlert("Note", "This opereration may take a few moments. this page will close automatically when completed", "ok");
+            UploadingIndicator.IsRunning = true;
             List<Menu> menu = await AzureManager.AzureManagerInstance.getSpecific("");
 
             for (int i = 0; i < splitItems.Count; i++) {
@@ -41,7 +43,9 @@ namespace FabrikamFood.Views {
                     }
 
                 }
-            }await Navigation.PopModalAsync();
+            }
+            UploadingIndicator.IsRunning = false;
+            await Navigation.PopModalAsync();
 
 
         }
@@ -49,6 +53,11 @@ namespace FabrikamFood.Views {
 
         public async void BackClicked(object sender, EventArgs e) {
             await Navigation.PopModalAsync();
+
+        }
+
+        public async void howToClicked(object sender, EventArgs e) {
+            await DisplayAlert("How To", "Simply press the button at the bottom, And your previous order will be added to your current cart", "Ok");
 
         }
 

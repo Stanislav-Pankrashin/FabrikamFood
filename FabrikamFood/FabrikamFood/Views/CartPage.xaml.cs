@@ -17,6 +17,7 @@ namespace FabrikamFood.Views {
             InitializeComponent();
             this.populateCart();
             this.getInfo();
+            priceText.Text = "Price: $" + Cart.totalPrice;
         }
 
         public void populateCart() {
@@ -32,16 +33,29 @@ namespace FabrikamFood.Views {
 
         }
 
-        public void clearCart(object sender, EventArgs e) {
+        public async void clearCart(object sender, EventArgs e) {
+            bool confirm = await DisplayAlert("Please Confirm", "Confirm whether you wish to Clear the cart", "Confirm", "No");
+            if (!confirm) {
+                return;
+            }
             Cart.CartInstance.clearCart();
             CartList.ItemsSource = Cart.CartInstance.items;
+            priceText.Text = "Price: $" + Cart.totalPrice;
 
         }
 
         public async void checkOut(object sender, EventArgs e) {
+            bool confirm = await DisplayAlert("Please Confirm", "Confirm whether you wish to place the order", "Confirm", "No");
+            if (!confirm) {
+                return;
+            }
             List<string> items;
             string itemString;
             Dictionary<string, Tuple<double, double>> dict = Cart.CartInstance.items;
+            if (dict.Count <= 0) {
+                await DisplayAlert("Please add Items to the cart first", "", "Ok");
+                return;
+            }
 
             string name = userName.Text;
             string address = userAddress.Text;
@@ -128,6 +142,10 @@ namespace FabrikamFood.Views {
         public async void BackClicked(object sender, EventArgs e) {
             await Navigation.PopModalAsync();
             
+        }
+
+        public async void howToClicked(object sender, EventArgs e) {
+            await DisplayAlert("How To", "Simply add items from our menu. And check them out at the cart! It's that easy. We'll even save your information for next time to make things easier", "Ok");
         }
 
         public async void removeItem(object sender, EventArgs e) {

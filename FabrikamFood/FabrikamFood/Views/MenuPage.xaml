@@ -16,10 +16,10 @@
     </Grid.ColumnDefinitions>
     <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" Grid.Row="0"/>
     <Button Text ="Cart" x:Name="cartButton" Grid.Column ="1" StyleClass="Warning" Grid.Row="0" Clicked = "CartClicked"/>
-    <Label Text="Menu" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header"/>
-    <Button Text="Entrees" Grid.ColumnSpan ="2" Grid.Row="2" Grid.Column ="0" Clicked="entreesClicked" StyleClass="Large"/>
-    <Button Text="Mains" Grid.ColumnSpan ="2" Grid.Row="3" Grid.Column ="0" Clicked="mainsClicked" StyleClass="Large"/>
-    <Button Text="Vegetarian" Grid.ColumnSpan ="2" Grid.Row="4" Grid.Column ="0" Clicked="vegetarianClicked" StyleClass="Large"/>
+    <Label Text="Menu" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" BackgroundColor ="#4286f4"/>
+    <Button Text="Entrees" Grid.ColumnSpan ="2" Grid.Row="2" Grid.Column ="0" Clicked="entreesClicked" StyleClass="Info"/>
+    <Button Text="Mains" Grid.ColumnSpan ="2" Grid.Row="3" Grid.Column ="0" Clicked="mainsClicked" StyleClass="Info"/>
+    <Button Text="Vegetarian" Grid.ColumnSpan ="2" Grid.Row="4" Grid.Column ="0" Clicked="vegetarianClicked" StyleClass="Info"/>
 
   </Grid>
 </ContentPage>

@@ -15,15 +15,15 @@
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
-    <Button Text="About" Grid.Row="0" Grid.Column="0" Clicked="showMenu" StyleClass="Warning" />
-    <Button Text="How To" Grid.Row="0" Grid.Column="1" Clicked="showMenu" StyleClass="Warning" />
-    <Label Text="Fabrikam Foods" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header"/>
+    <Button Text="About" Grid.Row="0" Grid.Column="0" Clicked="showAbout" StyleClass="Warning" />
+    <Button Text="How To" Grid.Row="0" Grid.Column="1" Clicked="showHowTo" StyleClass="Warning" />
+    <Label Text="Welcome To Fabrikam Foods" x:Name ="Banner" Grid.ColumnSpan ="2" Grid.Row="1" Grid.Column ="0" StyleClass ="Header" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" BackgroundColor ="#4286f4"/>
     <Button Text="Menu" Grid.Row="2" Grid.Column="0" Clicked="showMenu" StyleClass="Info" />
     <Button Text="Cart"  x:Name="cartButton" Grid.Row="2" Grid.Column="1" Clicked ="showCart" StyleClass="Info" />
-    <Button Text="Favorites and Past Orders" Grid.Row="3" Grid.Column="0" StyleClass="Info" Clicked ="showPast"/>
+    <Button Text="Previous Order" Grid.Row="3" Grid.Column="0" StyleClass="Info" Clicked ="showPast"/>
     <Button Text="Not Sure What To Get?" Grid.Row="3" Grid.Column="1" Clicked="showPhoto" StyleClass="Info" />
     <Button Text="How To Reach Us" Grid.Row="4" Grid.Column="0" Clicked ="showMap" StyleClass="Info" />
-    <Button Text="FaceBook Login" Grid.Row="4" Grid.Column ="1" Clicked="loginButton_Clicked" StyleClass="Info" />
+    <Image Grid.Row="4" Grid.Column="1" Source ="Images/icon.png"/>
     <!--<Button Text="FaceBook Login" Grid.Row="4" Grid.Column ="1" Clicked="loginButton_Clicked" StyleClass="Info" />-->
   </Grid>
 
