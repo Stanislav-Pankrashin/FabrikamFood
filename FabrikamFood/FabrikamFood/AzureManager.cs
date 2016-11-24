@@ -16,7 +16,7 @@ namespace FabrikamFood {
         private IMobileServiceTable<UsersData> usersTable;
         //Get a service client and the table
         public AzureManager() {
-            this.client = new MobileServiceClient("http://fabrikamfoodsv2.azurewebsites.net");
+            this.client = new MobileServiceClient("http://fabrikamfoodsv3.azurewebsites.net");
             this.menuTable = this.client.GetTable<Menu>();
         }
         //If there is no instance, create one and return it
@@ -36,7 +36,8 @@ namespace FabrikamFood {
             await this.ordersTable.InsertAsync(order);
         }
 
-        public async Task UpdatePersonalInfo(Orders order) {
+
+        /*public async Task UpdatePersonalInfo(Orders order) {
             if (usersTable == null) {
                 this.usersTable = this.client.GetTable<UsersData>();
             }
@@ -48,9 +49,9 @@ namespace FabrikamFood {
                 for (int i = 0; i < len; i++) {
                     if (usersItems[i].UserId == Cart.userId) {
                         data.id = usersItems[i].id;
-                        /*data.createdAt = usersItems[i].c;
+                        data.createdAt = usersItems[i].c;
                         data.version;
-                        data.deleted;*/
+                        data.deleted;
                         data.UserName = order.Name;
                         data.UserAddress = order.Address;
                         data.UserNumber = order.PhoneNumber;
@@ -76,7 +77,7 @@ namespace FabrikamFood {
 
 
 
-        }
+        }*/
 
 
 

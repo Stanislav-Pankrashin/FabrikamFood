@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using FabrikamFood.DataModels;
 using FabrikamFood.UserData;
+using Plugin.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,23 @@ using Xamarin.Forms;
 
 namespace FabrikamFood.Views {
     public partial class CartPage : ContentPage {
+
         public CartPage() {
             InitializeComponent();
             this.populateCart();
+            this.getInfo();
         }
 
         public void populateCart() {
             Dictionary<string, Tuple<double, double>> items = Cart.CartInstance.items;
             CartList.ItemsSource = items;
+
+        }
+
+        public void getInfo() {
+            userName.Text = CrossSettings.Current.GetValueOrDefault("userName", (string)null);
+            userAddress.Text = CrossSettings.Current.GetValueOrDefault("userAddress", (string)null);
+            userNumber.Text = CrossSettings.Current.GetValueOrDefault("userNumber", (string)null);
 
         }
 
@@ -88,11 +98,11 @@ namespace FabrikamFood.Views {
                 order.PhoneNumber = number;
                 //then upload it to the table
                 await AzureManager.AzureManagerInstance.UpdateOrders(order);
-                if (Cart.loggedIn) {
+                /*if (Cart.loggedIn) {
                     //await AzureManager.AzureManagerInstance.UpdatePersonalInfo(order);
-                }
+                }*/
 
-
+                saveOrder(order);
                 await DisplayAlert("Yay!", "Order sent, you will be contacted when order is ready", "ok");
                 Cart.CartInstance.clearCart();
                 CartList.ItemsSource = Cart.CartInstance.items;
@@ -107,9 +117,21 @@ namespace FabrikamFood.Views {
 
 
         }
+        public void saveOrder(Orders order) {
+            CrossSettings.Current.AddOrUpdateValue("userName", order.Name);
+            CrossSettings.Current.AddOrUpdateValue("userAddress", order.Address);
+            CrossSettings.Current.AddOrUpdateValue("userNumber", order.PhoneNumber);
+            CrossSettings.Current.AddOrUpdateValue("userItems", order.Items);
+
+        }
+
         public async void BackClicked(object sender, EventArgs e) {
             await Navigation.PopModalAsync();
             
+        }
+
+        public async void removeItem(object sender, EventArgs e) {
+            await DisplayAlert("yay!", "It worked!", "Ok");
         }
     }
 }

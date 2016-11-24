@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FabrikamFood.Views.PreviousOrder">
+  <StackLayout>
+    <!--<ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />-->
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+
+      </Grid.ColumnDefinitions>
+      <Button Text ="Back" Grid.ColumnSpan ="2" Grid.Column ="0" Grid.Row ="0" Clicked ="BackClicked"/>
+      <Button Text ="How To"  Grid.Column ="2" Grid.Row ="0"/>
+      <Label Text ="Previous Order" Grid.ColumnSpan="3" Grid.Column ="0" Grid.Row ="1"/>
+      <Label Text ="Item" Grid.Column ="0" Grid.Row ="2"/>
+      <Label Text ="Total Price" Grid.Column ="1" Grid.Row ="2"/>
+      <Label Text ="Quantity" Grid.Column ="2" Grid.Row ="2"/>
+
+    </Grid>
+
+    <ListView x:Name="CartList" HasUnevenRows="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <!--<ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />-->
+
+              </Grid.ColumnDefinitions>
+              <Label Text="{Binding Item1}" />
+              <!--<Label Grid.Column="1" Text="{Binding Path=Value.Item1}"/>
+              <Label Grid.Column="2" Text="{Binding Path=Value.Item2}"/>-->
+
+
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <Button Text ="Add All To Order" Clicked = "addToOrder"/>
+    </Grid>
+  </StackLayout>
+</ContentPage>

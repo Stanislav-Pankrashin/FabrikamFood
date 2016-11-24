@@ -3,12 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="FabrikamFood.Views.MapsPage">
-  <StackLayout VerticalOptions="StartAndExpand" Padding="30">
+  <StackLayout VerticalOptions="StartAndExpand">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+
+      </Grid.ColumnDefinitions>
+      <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" />
+      <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" x:Name="cartButton" Clicked = "CartClicked"/>
+
+    </Grid>
     <maps:Map WidthRequest="340" HeightRequest="400"
         x:Name="MyMap"
         IsShowingUser="true"
         MapType="Street"
         />
+    <Label Text ="" x:Name ="outputField"/>
   </StackLayout>
   
 </ContentPage>

@@ -10,12 +10,16 @@ using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
 using FabrikamFood.UserData;
 using Plugin.Permissions;
+using Android.Locations;
+using Android.Content;
+using FabrikamFood.Views;
 
 namespace FabrikamFood.Droid {
     [Activity(Label = "FabrikamFood", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IAuthenticate {
         // Define a authenticated user.
         private MobileServiceUser user;
+        public LocationManager locMgr;
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults) {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -59,10 +63,12 @@ namespace FabrikamFood.Droid {
             // Initialize the authenticator before loading the app.
             App.Init((IAuthenticate)this);
             base.OnCreate(bundle);
-
+            locMgr = GetSystemService(Context.LocationService) as LocationManager;
+            MapsPage.locMgr = locMgr;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
+
     }
 }
 

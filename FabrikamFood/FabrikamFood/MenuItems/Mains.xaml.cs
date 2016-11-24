@@ -1,5 +1,6 @@
 ﻿using FabrikamFood.DataModels;
 using FabrikamFood.UserData;
+using FabrikamFood.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace FabrikamFood.MenuItems {
         public Mains() {
             InitializeComponent();
             this.getMainItems();
+            cartButton.Text = string.Format("Cart({0})", Cart.numberItems);
         }
         //Populate the view with the Mains
         public async void getMainItems() {
@@ -51,8 +53,9 @@ namespace FabrikamFood.MenuItems {
                 addItem = await DisplayAlert(itemName, itemDescription + "\n\n" + "$" + itemprice, "purchase", "no thanks");
                 if (addItem) {
                     Cart.CartInstance.addItem(itemName, itemprice);
+                    cartButton.Text = string.Format("Cart({0})", Cart.numberItems);
                 }
-
+                
             } catch {
                 await DisplayAlert("Oh no!", "item not found", "ok");
             }
@@ -64,6 +67,9 @@ namespace FabrikamFood.MenuItems {
         public async void BackClicked(object sender, EventArgs e) {
             await Navigation.PopModalAsync();
 
+        }
+        public async void CartClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new CartPage());
         }
     }
 }

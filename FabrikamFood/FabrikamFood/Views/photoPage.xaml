@@ -5,6 +5,7 @@
   <StackLayout BackgroundColor="White">
     <Button Text="Take Picture" TextColor="White" BackgroundColor="Green" Clicked="TakePicture_Clicked" />
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />
+  
 
     
   </StackLayout>

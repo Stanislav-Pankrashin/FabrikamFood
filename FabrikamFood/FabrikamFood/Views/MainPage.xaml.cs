@@ -31,6 +31,7 @@ namespace FabrikamFood {
 
         public MainPage() {
             InitializeComponent();
+            //cartButton.Text = string.Format("Cart ({0})", 0);
         }
         public async void showAlert(object sender, EventArgs e) {
             await DisplayAlert("Yay!", "Button Press Registered", "ok");
@@ -46,6 +47,9 @@ namespace FabrikamFood {
         }
         public async void showPhoto(object sender, EventArgs e) {
             await Navigation.PushModalAsync(new photoPage());
+        }
+        public async void showPast(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new PreviousOrder());
         }
 
     }

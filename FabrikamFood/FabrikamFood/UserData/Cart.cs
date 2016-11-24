@@ -31,6 +31,8 @@ namespace FabrikamFood.UserData {
             //Dictionary is in the format "itemName": (price, quantity)
             this.items = new Dictionary<string, Tuple<double, double>>();
 
+            numberItems = 0;
+
         }
 
 
@@ -54,6 +56,7 @@ namespace FabrikamFood.UserData {
                 items.Add(item, new Tuple<double, double>(price, 1));
                 totalPrice += price;
             }
+            numberItems++;
 
         }
 

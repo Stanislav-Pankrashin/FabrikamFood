@@ -37,7 +37,7 @@
                 <ColumnDefinition Width="*" />
 
               </Grid.ColumnDefinitions>
-              <Label Grid.Column="0" Text="{Binding Path=Key}"/>
+              <Label Grid.Column="0" Text="{Binding Path=Key}" />
               <Label Grid.Column="1" Text="{Binding Path=Value.Item1}"/>
               <Label Grid.Column="2" Text="{Binding Path=Value.Item2}"/>
 

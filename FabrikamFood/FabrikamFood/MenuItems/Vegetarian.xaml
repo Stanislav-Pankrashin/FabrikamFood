@@ -13,7 +13,7 @@
 
       </Grid.ColumnDefinitions>
       <Button Text ="Back" Grid.Column ="0" Clicked ="BackClicked" StyleClass="Warning" />
-      <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" />
+      <Button Text ="Cart"  Grid.Column ="1" StyleClass="Warning" x:Name="cartButton" Clicked = "CartClicked"/>
 
     </Grid>
     <ActivityIndicator x:Name="UploadingIndicator" Color="Red" IsRunning="false" Grid.Row="0" />

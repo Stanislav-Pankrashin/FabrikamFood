@@ -11,11 +11,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using FabrikamFood.UserData;
+using Android.Widget;
+using Android.Locations;
 
 namespace FabrikamFood.Views {
     public partial class photoPage : ContentPage {
+
         public photoPage() {
             InitializeComponent();
+
         }
 
         public async void TakePicture_Clicked(object Sender, EventArgs e) {
